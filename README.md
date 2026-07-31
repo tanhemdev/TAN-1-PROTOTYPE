@@ -31,7 +31,7 @@ TAN-1 integrates non-invasive biosensors with a predictive AI layer. Instead of 
 
 **What I did:**
 
-- Led product vision from first principles — defined the problem space, user personas, and core value proposition
+- Led product vision from first principles defined the problem space, user personas, and core value proposition
 - Worked with engineers to build a **92% accuracy** risk-prediction model using biosensor data
 - Designed high-fidelity **Figma mockups** mapping complete user journeys (patient → caregiver → clinician)
 - Prioritized the product roadmap with data-driven insights from 30+ user interviews
@@ -50,12 +50,12 @@ TAN-1 integrates non-invasive biosensors with a predictive AI layer. Instead of 
 |---|---|
 | **Product** | Figma (hi-fi mockups), user journey mapping, sprint planning, PRD |
 | **AI/ML** | Predictive risk model (92% accuracy), biosensor data pipeline |
-| **Research** | 30+ user interviews, competitive analysis, clinical workflow mapping |
+| **Research** | 60+ user interviews, competitive analysis, clinical workflow mapping |
 | **Design** | Caregiver notification loops, plain-English guidance UI, emergency alert system |
 
 ## Background
 
-Founded after my twin sister's Type 1 diabetes diagnosis. The gap between raw CGM data and what a patient actually needs to know — in plain English, at the right moment — was the starting point.
+Founded after my twin sister's Type 1 diabetes diagnosis. The gap between raw CGM data and what a patient actually needs to know, in plain English, at the right moment..was the starting point.
 
 ---
 
