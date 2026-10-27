@@ -1,0 +1,6 @@
+# Simulation and model training (pipeline/)
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.5,<1.9  # export_model.py reads the fitted trees' internals
+matplotlib>=3.8
