@@ -27,8 +27,8 @@
 ## Why I built this
 
 <p align="center">
-  <img src="assets/twins-childhood.jpg" width="300" alt="Tanisha and me as kids" />
-  <img src="assets/tanisha-and-tanya.jpg" width="300" alt="Tanisha and me today" />
+  <img src="assets/twins-childhood.jpg" height="280" alt="Tanisha and me as kids" />
+  <img src="assets/tanisha-and-tanya.jpg" height="280" alt="Tanisha and me today" />
   <br /><sub>My twin sister Tanisha and me, then and now</sub>
 </p>
 
