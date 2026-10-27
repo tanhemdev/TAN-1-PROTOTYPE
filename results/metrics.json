@@ -1,0 +1,478 @@
+{
+  "task": "Predict the CGM risk tier 30 minutes ahead from the last 60 minutes of CGM readings",
+  "data": {
+    "source": "Simulated with the UVA/Padova T1D simulator (simglucose): 30 virtual patients with pump-style dosing titrated to consensus targets, lows treated with 15 g carbs, and everyday dosing mistakes added. Not real patient data.",
+    "readings_total": 144030,
+    "patients_total": 30,
+    "train_patients": [
+      "adolescent#001",
+      "adolescent#002",
+      "adolescent#003",
+      "adolescent#004",
+      "adolescent#005",
+      "adolescent#006",
+      "adolescent#007",
+      "adult#001",
+      "adult#002",
+      "adult#003",
+      "adult#004",
+      "adult#005",
+      "adult#006",
+      "adult#007",
+      "child#001",
+      "child#002",
+      "child#003",
+      "child#004",
+      "child#005",
+      "child#006",
+      "child#007"
+    ],
+    "test_patients": [
+      "adolescent#008",
+      "adolescent#009",
+      "adolescent#010",
+      "adult#008",
+      "adult#009",
+      "adult#010",
+      "child#008",
+      "child#009",
+      "child#010"
+    ],
+    "train_windows": 100191,
+    "test_windows": 42939,
+    "test_label_distribution": {
+      "urgent_low": 726,
+      "low": 1271,
+      "in_range": 32282,
+      "high": 4962,
+      "very_high": 3698
+    }
+  },
+  "tiers": [
+    "urgent_low",
+    "low",
+    "in_range",
+    "high",
+    "very_high"
+  ],
+  "features": [
+    "glucose",
+    "delta_3",
+    "delta_15",
+    "delta_30",
+    "delta_60",
+    "slope_30",
+    "accel",
+    "mean_60",
+    "std_60",
+    "min_60",
+    "max_60",
+    "projected_30",
+    "tod_sin",
+    "tod_cos"
+  ],
+  "model": {
+    "type": "HistGradientBoostingClassifier",
+    "l2_regularization": 1.0,
+    "learning_rate": 0.06,
+    "max_iter": 250,
+    "max_leaf_nodes": 24,
+    "min_samples_leaf": 40
+  },
+  "test": {
+    "model": {
+      "accuracy": 0.8721,
+      "balanced_accuracy": 0.5678,
+      "macro_f1": 0.602,
+      "low_alert_recall": 0.3816,
+      "low_alert_precision": 0.6485,
+      "per_tier": {
+        "urgent_low": {
+          "precision": 0.5195,
+          "recall": 0.2383,
+          "f1": 0.3267,
+          "support": 726
+        },
+        "low": {
+          "precision": 0.3124,
+          "recall": 0.2069,
+          "f1": 0.2489,
+          "support": 1271
+        },
+        "in_range": {
+          "precision": 0.9152,
+          "recall": 0.9571,
+          "f1": 0.9357,
+          "support": 32282
+        },
+        "high": {
+          "precision": 0.6717,
+          "recall": 0.6342,
+          "f1": 0.6524,
+          "support": 4962
+        },
+        "very_high": {
+          "precision": 0.8945,
+          "recall": 0.8026,
+          "f1": 0.8461,
+          "support": 3698
+        }
+      },
+      "confusion_matrix": [
+        [
+          173,
+          237,
+          316,
+          0,
+          0
+        ],
+        [
+          89,
+          263,
+          919,
+          0,
+          0
+        ],
+        [
+          71,
+          332,
+          30897,
+          965,
+          17
+        ],
+        [
+          0,
+          8,
+          1474,
+          3147,
+          333
+        ],
+        [
+          0,
+          2,
+          155,
+          573,
+          2968
+        ]
+      ]
+    },
+    "baseline_same_tier": {
+      "accuracy": 0.8231,
+      "balanced_accuracy": 0.5704,
+      "macro_f1": 0.5706,
+      "low_alert_recall": 0.4922,
+      "low_alert_precision": 0.4932,
+      "per_tier": {
+        "urgent_low": {
+          "precision": 0.405,
+          "recall": 0.405,
+          "f1": 0.405,
+          "support": 726
+        },
+        "low": {
+          "precision": 0.2486,
+          "recall": 0.2478,
+          "f1": 0.2482,
+          "support": 1271
+        },
+        "in_range": {
+          "precision": 0.9074,
+          "recall": 0.908,
+          "f1": 0.9077,
+          "support": 32282
+        },
+        "high": {
+          "precision": 0.5142,
+          "recall": 0.5125,
+          "f1": 0.5133,
+          "support": 4962
+        },
+        "very_high": {
+          "precision": 0.7788,
+          "recall": 0.7788,
+          "f1": 0.7788,
+          "support": 3698
+        }
+      },
+      "confusion_matrix": [
+        [
+          294,
+          211,
+          221,
+          0,
+          0
+        ],
+        [
+          163,
+          315,
+          793,
+          0,
+          0
+        ],
+        [
+          261,
+          719,
+          29311,
+          1934,
+          57
+        ],
+        [
+          4,
+          14,
+          1640,
+          2543,
+          761
+        ],
+        [
+          4,
+          8,
+          337,
+          469,
+          2880
+        ]
+      ]
+    },
+    "baseline_trend_line": {
+      "accuracy": 0.7954,
+      "balanced_accuracy": 0.6597,
+      "macro_f1": 0.5628,
+      "low_alert_recall": 0.7947,
+      "low_alert_precision": 0.3608,
+      "per_tier": {
+        "urgent_low": {
+          "precision": 0.2458,
+          "recall": 0.7645,
+          "f1": 0.372,
+          "support": 726
+        },
+        "low": {
+          "precision": 0.1761,
+          "recall": 0.2966,
+          "f1": 0.221,
+          "support": 1271
+        },
+        "in_range": {
+          "precision": 0.9363,
+          "recall": 0.8485,
+          "f1": 0.8903,
+          "support": 32282
+        },
+        "high": {
+          "precision": 0.531,
+          "recall": 0.549,
+          "f1": 0.5398,
+          "support": 4962
+        },
+        "very_high": {
+          "precision": 0.7474,
+          "recall": 0.8402,
+          "f1": 0.7911,
+          "support": 3698
+        }
+      },
+      "confusion_matrix": [
+        [
+          555,
+          99,
+          72,
+          0,
+          0
+        ],
+        [
+          556,
+          377,
+          338,
+          0,
+          0
+        ],
+        [
+          1103,
+          1626,
+          27391,
+          2042,
+          120
+        ],
+        [
+          28,
+          27,
+          1253,
+          2724,
+          930
+        ],
+        [
+          16,
+          12,
+          199,
+          364,
+          3107
+        ]
+      ]
+    }
+  },
+  "low_alerts": {
+    "definition": {
+      "alert": "the model's chance of glucose below 70 in 30 minutes reaches the threshold (glucose still 70 or above)",
+      "low_event": "glucose drops below 70; lows less than 30 minutes apart count once",
+      "caught_early": "an alert fired in the 30 minutes before glucose went below 70",
+      "false_alarm": "glucose stayed at or above 70 for the 45 minutes after the alert"
+    },
+    "threshold": 0.2,
+    "threshold_chosen_on": "out-of-fold predictions on the 21 training patients: the highest threshold catching at least 95% of lows early",
+    "threshold_search": [
+      {
+        "threshold": 0.05,
+        "low_events": 289,
+        "caught_early": 0.9965,
+        "median_warning_minutes": 30.0,
+        "alerts": 671,
+        "false_alarms": 499,
+        "false_alarms_per_day": 2.38,
+        "alert_precision": 0.2563,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.1,
+        "low_events": 289,
+        "caught_early": 0.9896,
+        "median_warning_minutes": 27.0,
+        "alerts": 603,
+        "false_alarms": 390,
+        "false_alarms_per_day": 1.86,
+        "alert_precision": 0.3532,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.15,
+        "low_events": 289,
+        "caught_early": 0.9654,
+        "median_warning_minutes": 21.0,
+        "alerts": 554,
+        "false_alarms": 323,
+        "false_alarms_per_day": 1.54,
+        "alert_precision": 0.417,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.2,
+        "low_events": 289,
+        "caught_early": 0.9619,
+        "median_warning_minutes": 18.0,
+        "alerts": 501,
+        "false_alarms": 265,
+        "false_alarms_per_day": 1.26,
+        "alert_precision": 0.4711,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.25,
+        "low_events": 289,
+        "caught_early": 0.9412,
+        "median_warning_minutes": 18.0,
+        "alerts": 469,
+        "false_alarms": 226,
+        "false_alarms_per_day": 1.08,
+        "alert_precision": 0.5181,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.3,
+        "low_events": 289,
+        "caught_early": 0.8997,
+        "median_warning_minutes": 15.0,
+        "alerts": 433,
+        "false_alarms": 185,
+        "false_alarms_per_day": 0.88,
+        "alert_precision": 0.5727,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.35,
+        "low_events": 289,
+        "caught_early": 0.8651,
+        "median_warning_minutes": 12.0,
+        "alerts": 401,
+        "false_alarms": 154,
+        "false_alarms_per_day": 0.73,
+        "alert_precision": 0.616,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.4,
+        "low_events": 289,
+        "caught_early": 0.7958,
+        "median_warning_minutes": 12.0,
+        "alerts": 353,
+        "false_alarms": 120,
+        "false_alarms_per_day": 0.57,
+        "alert_precision": 0.6601,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.45,
+        "low_events": 289,
+        "caught_early": 0.7093,
+        "median_warning_minutes": 12.0,
+        "alerts": 300,
+        "false_alarms": 90,
+        "false_alarms_per_day": 0.43,
+        "alert_precision": 0.7,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.5,
+        "low_events": 289,
+        "caught_early": 0.6609,
+        "median_warning_minutes": 12.0,
+        "alerts": 264,
+        "false_alarms": 69,
+        "false_alarms_per_day": 0.33,
+        "alert_precision": 0.7386,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.55,
+        "low_events": 289,
+        "caught_early": 0.5813,
+        "median_warning_minutes": 9.0,
+        "alerts": 228,
+        "false_alarms": 52,
+        "false_alarms_per_day": 0.25,
+        "alert_precision": 0.7719,
+        "patient_days": 210.0
+      },
+      {
+        "threshold": 0.6,
+        "low_events": 289,
+        "caught_early": 0.4948,
+        "median_warning_minutes": 9.0,
+        "alerts": 187,
+        "false_alarms": 36,
+        "false_alarms_per_day": 0.17,
+        "alert_precision": 0.8075,
+        "patient_days": 210.0
+      }
+    ],
+    "test": {
+      "model": {
+        "low_events": 117,
+        "caught_early": 0.9658,
+        "median_warning_minutes": 21.0,
+        "alerts": 215,
+        "false_alarms": 127,
+        "false_alarms_per_day": 1.41,
+        "alert_precision": 0.4093,
+        "patient_days": 90.0
+      },
+      "baseline_trend_line": {
+        "low_events": 117,
+        "caught_early": 0.9487,
+        "median_warning_minutes": 30.0,
+        "alerts": 305,
+        "false_alarms": 239,
+        "false_alarms_per_day": 2.66,
+        "alert_precision": 0.2164,
+        "patient_days": 90.0
+      }
+    }
+  }
+}
