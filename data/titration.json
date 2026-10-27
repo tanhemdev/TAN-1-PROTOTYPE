@@ -1,0 +1,352 @@
+[
+ {
+  "patient": "child#001",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0208,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#002",
+  "dose_scale": 0.85,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0769,
+    "below_54": 0.0
+   },
+   {
+    "scale": 0.85,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#003",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0146,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#004",
+  "dose_scale": 0.7,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.1019,
+    "below_54": 0.0
+   },
+   {
+    "scale": 0.85,
+    "below_70": 0.0561,
+    "below_54": 0.0
+   },
+   {
+    "scale": 0.7,
+    "below_70": 0.027,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#005",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0104,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#006",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0166,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#007",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0249,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#008",
+  "dose_scale": 0.85,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0457,
+    "below_54": 0.0021
+   },
+   {
+    "scale": 0.85,
+    "below_70": 0.0249,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#009",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0208,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "child#010",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0146,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#001",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#002",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#003",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#004",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#005",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#006",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#007",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#008",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#009",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adolescent#010",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#001",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#002",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#003",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#004",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#005",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0146,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#006",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#007",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#008",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#009",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ },
+ {
+  "patient": "adult#010",
+  "dose_scale": 1.0,
+  "tried": [
+   {
+    "scale": 1.0,
+    "below_70": 0.0,
+    "below_54": 0.0
+   }
+  ]
+ }
+]
