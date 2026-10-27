@@ -24,7 +24,11 @@ export function App() {
 
   useEffect(() => {
     Promise.all([loadJson('./model.json'), loadJson('./traces.json'), loadJson('./metrics.json')])
-      .then(([model, traces, metrics]) => setData({ model, traces, metrics }))
+      .then(([model, traces, metrics]) => {
+        // Open on the adult: their first alert is an early low warning, the core of the product.
+        setPi(Math.max(0, traces.patients.findIndex((p) => p.cohort === 'adult')));
+        setData({ model, traces, metrics });
+      })
       .catch((e) => setError(e.message));
   }, []);
 
