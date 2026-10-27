@@ -58,7 +58,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 
 
   // Every simulated patient loads.
   const options = await page.locator('select option').count();
-  for (let i = 1; i < options; i++) {
+  for (let i = 0; i < options; i++) {
     await page.locator('select').selectOption(String(i));
     await page.locator('.now .reading').waitFor();
   }
